@@ -32,6 +32,9 @@ RUN pip3 install --no-cache-dir geopandas
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 
+# Set up password for Jupyter access:
+RUN jupyter notebook $MASTERPASSWD
+
 USER $MASTERUSER
 
 # junk
