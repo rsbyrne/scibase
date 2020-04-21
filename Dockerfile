@@ -3,6 +3,10 @@ MAINTAINER https://github.com/rsbyrne/
 
 USER root
 
+ENV SCIBASEDIR $MASTERUSERHOME/scibase
+ADD . $SCIBASEDIR
+RUN chown -R $MASTERUSER $SCIBASEDIR
+
 RUN apt-get install -y python3-venv
 RUN apt-get install -y python3-pip
 
