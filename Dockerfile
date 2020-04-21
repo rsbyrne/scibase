@@ -25,6 +25,7 @@ RUN pip3 install --no-cache-dir scikit-learn
 RUN pip3 install --no-cache-dir jupyterlab
 RUN pip3 install --no-cache-dir shapely
 RUN pip3 install --no-cache-dir fiona
+RUN pip3 install --no-cache-dir descartes
 RUN pip3 install --no-cache-dir geopandas
 
 # Install Node.js - used by JupyterLab
