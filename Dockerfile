@@ -22,7 +22,6 @@ RUN pip3 install --no-cache-dir bokeh
 RUN pip3 install --no-cache-dir Flask
 RUN pip3 install --no-cache-dir dask[complete]
 RUN pip3 install --no-cache-dir scikit-learn
-RUN pip3 install --no-cache-dir tensorflow
 RUN pip3 install --no-cache-dir jupyterlab
 RUN pip3 install --no-cache-dir shapely
 RUN pip3 install --no-cache-dir fiona
@@ -41,3 +40,4 @@ USER $MASTERUSER
 ## Install miniconda
 #RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
 #RUN bash ~/miniconda.sh -b -p $HOME/miniconda
+#RUN pip3 install --no-cache-dir tensorflow
