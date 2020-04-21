@@ -25,7 +25,7 @@ RUN pip3 install --no-cache-dir fiona
 RUN pip3 install --no-cache-dir geopandas
 
 # Install Node.js - used by JupyterLab
-RUN curl -sL https://deb.nodesource.com/setup_10.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 
 USER $MASTERUSER
