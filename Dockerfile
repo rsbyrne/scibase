@@ -7,6 +7,9 @@ ENV SCIBASEDIR $MASTERUSERHOME/scibase
 ADD . $SCIBASEDIR
 RUN chown -R $MASTERUSER $SCIBASEDIR
 
+RUN apt-get update -y
+RUN apt-get install -y mpi
+
 RUN apt-get install -y python3-venv
 RUN apt-get install -y python3-pip
 
@@ -14,6 +17,7 @@ ENV PYTHONPATH "${PYTHONPATH}:$WORKSPACE"
 ENV PYTHONPATH "${PYTHONPATH}:$MOUNTDIR"
 ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
 
+RUN pip3 install --no-cache-dir mpi4py
 RUN pip3 install --no-cache-dir matplotlib
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir pandas
