@@ -1,4 +1,4 @@
-FROM rsbyrne:base
+FROM rsbyrne/base
 MAINTAINER https://github.com/rsbyrne/
 
 USER root
