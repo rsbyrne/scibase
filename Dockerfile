@@ -31,8 +31,7 @@ RUN pip3 install --no-cache-dir geopandas
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 
-# Set up password for Jupyter access:
-RUN jupyter notebook password $MASTERPASSWD
+
 
 USER $MASTERUSER
 
@@ -41,3 +40,5 @@ USER $MASTERUSER
 #RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O $HOME/miniconda.sh
 #RUN bash ~/miniconda.sh -b -p $HOME/miniconda
 #RUN pip3 install --no-cache-dir tensorflow
+## Set up password for Jupyter access:
+#RUN jupyter notebook password $MASTERPASSWD
