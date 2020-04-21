@@ -19,6 +19,7 @@ ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
 RUN apt-get install -y libopenmpi-dev
 RUN pip3 install --no-cache-dir mpi4py
 
+RUN pip3 install --no-cache-dir h5py
 RUN pip3 install --no-cache-dir matplotlib
 RUN pip3 install --no-cache-dir scipy
 RUN pip3 install --no-cache-dir pandas
