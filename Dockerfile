@@ -9,6 +9,16 @@ RUN chown -R $MASTERUSER $SCIBASEDIR
 
 RUN apt-get update -y
 
+RUN apt-get install unzip
+RUN apt-get install firefox
+# install geckodriver
+WORKDIR /usr/bin
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+RUN tar -xvzf geckodriver*
+RUN rm geckodriver*.tar.gz
+RUN chmod +x geckodriver
+WORKDIR $MASTERUSERHOME
+
 RUN apt-get install -y python3-venv
 RUN apt-get install -y python3-pip
 
@@ -33,6 +43,7 @@ RUN pip3 install --no-cache-dir shapely
 RUN pip3 install --no-cache-dir fiona
 RUN pip3 install --no-cache-dir descartes
 RUN pip3 install --no-cache-dir geopandas
+RUN pip3 install --no-cache-dir selenium
 
 USER $MASTERUSER
 
