@@ -9,8 +9,8 @@ RUN chown -R $MASTERUSER $SCIBASEDIR
 
 RUN apt-get update -y
 
-RUN apt-get install unzip
-RUN apt-get install firefox
+RUN apt-get install -y unzip
+RUN apt-get install -y firefox
 # install geckodriver
 WORKDIR /usr/bin
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
