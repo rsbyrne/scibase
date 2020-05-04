@@ -26,26 +26,37 @@ ENV PYTHONPATH "${PYTHONPATH}:$WORKSPACE"
 ENV PYTHONPATH "${PYTHONPATH}:$MOUNTDIR"
 ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
 
+# MPI
 RUN apt-get install -y libopenmpi-dev
 RUN pip3 install --no-cache-dir mpi4py
 ENV OMPI_MCA_btl_vader_single_copy_mechanism "none"
 
-RUN pip3 install --no-cache-dir h5py
+# Visualisation
 RUN pip3 install --no-cache-dir matplotlib
-RUN pip3 install --no-cache-dir scipy
-RUN pip3 install --no-cache-dir pandas
 RUN pip3 install --no-cache-dir Pillow
 RUN pip3 install --no-cache-dir bokeh
-RUN pip3 install --no-cache-dir Flask
+
+# Data
+RUN pip3 install --no-cache-dir h5py
+RUN pip3 install --no-cache-dir scipy
+RUN pip3 install --no-cache-dir pandas
 RUN pip3 install --no-cache-dir dask[complete]
 RUN pip3 install --no-cache-dir scikit-learn
-RUN pip3 install --no-cache-dir jupyterlab
+
+# Geographic
 RUN pip3 install --no-cache-dir shapely
 RUN pip3 install --no-cache-dir mercantile
 RUN pip3 install --no-cache-dir fiona
 RUN pip3 install --no-cache-dir descartes
 RUN pip3 install --no-cache-dir geopandas
+RUN pip3 install --no-cache-dir mercantile
+
+# Web
+RUN pip3 install --no-cache-dir Flask
 RUN pip3 install --no-cache-dir selenium
+
+# Productivity
+RUN pip3 install --no-cache-dir jupyterlab
 
 USER $MASTERUSER
 
