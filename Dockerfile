@@ -45,7 +45,6 @@ RUN pip3 install --no-cache-dir scikit-learn
 
 # Geographic
 RUN pip3 install --no-cache-dir shapely
-RUN pip3 install --no-cache-dir mercantile
 RUN pip3 install --no-cache-dir fiona
 RUN pip3 install --no-cache-dir descartes
 RUN pip3 install --no-cache-dir geopandas
