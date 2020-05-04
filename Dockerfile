@@ -29,6 +29,7 @@ ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
 # MPI
 RUN apt-get install -y libopenmpi-dev
 RUN pip3 install --no-cache-dir mpi4py
+ENV OMPI_MCA_btl_vader_single_copy_mechanism "none"
 
 # Visualisation
 RUN pip3 install --no-cache-dir matplotlib
