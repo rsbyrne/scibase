@@ -9,19 +9,12 @@ RUN chown -R $MASTERUSER $SCIBASEDIR
 
 RUN apt-get update -y
 
-RUN apt-get install -y unzip
-RUN apt-get install -y firefox
-# install geckodriver
-WORKDIR /usr/bin
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-RUN tar -xvzf geckodriver*
-RUN rm geckodriver*.tar.gz
-RUN chmod +x geckodriver
-WORKDIR $MASTERUSERHOME
+# Docker
+RUN apt-get install -y docker.io
 
+# Python
 RUN apt-get install -y python3-venv
 RUN apt-get install -y python3-pip
-
 ENV PYTHONPATH "${PYTHONPATH}:$WORKSPACE"
 ENV PYTHONPATH "${PYTHONPATH}:$MOUNTDIR"
 ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
@@ -51,6 +44,14 @@ RUN pip3 install --no-cache-dir geopandas
 RUN pip3 install --no-cache-dir mercantile
 
 # Web
+RUN apt-get install -y unzip
+RUN apt-get install -y firefox
+WORKDIR /usr/bin
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+RUN tar -xvzf geckodriver*
+RUN rm geckodriver*.tar.gz
+RUN chmod +x geckodriver
+WORKDIR $MASTERUSERHOME
 RUN pip3 install --no-cache-dir Flask
 RUN pip3 install --no-cache-dir selenium
 
