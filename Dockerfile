@@ -28,6 +28,7 @@ ENV PYTHONPATH "${PYTHONPATH}:$BASEDIR"
 
 RUN apt-get install -y libopenmpi-dev
 RUN pip3 install --no-cache-dir mpi4py
+ENV OMPI_MCA_btl_vader_single_copy_mechanism "none"
 
 RUN pip3 install --no-cache-dir h5py
 RUN pip3 install --no-cache-dir matplotlib
@@ -40,6 +41,7 @@ RUN pip3 install --no-cache-dir dask[complete]
 RUN pip3 install --no-cache-dir scikit-learn
 RUN pip3 install --no-cache-dir jupyterlab
 RUN pip3 install --no-cache-dir shapely
+RUN pip3 install --no-cache-dir mercantile
 RUN pip3 install --no-cache-dir fiona
 RUN pip3 install --no-cache-dir descartes
 RUN pip3 install --no-cache-dir geopandas
