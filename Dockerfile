@@ -59,7 +59,8 @@ RUN pip3 install --no-cache-dir selenium
 RUN pip3 install --no-cache-dir jupyterlab
 
 # Publication
-RUN apt-get install pandoc
+RUN apt-get install -y pandoc
+RUN apt-get install -y texlive-xetex texlive-fonts-recommended texlive-generic-recommended
 
 USER $MASTERUSER
 
