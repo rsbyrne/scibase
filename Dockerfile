@@ -58,6 +58,9 @@ RUN pip3 install --no-cache-dir selenium
 # Productivity
 RUN pip3 install --no-cache-dir jupyterlab
 
+# Publication
+RUN apt-get install pandoc
+
 USER $MASTERUSER
 
 # junk
