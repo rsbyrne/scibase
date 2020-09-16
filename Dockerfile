@@ -62,6 +62,7 @@ RUN pip3 install --no-cache-dir jupyterlab
 RUN apt-get install -y pandoc
 RUN apt-get install -y texlive-xetex texlive-fonts-recommended texlive-generic-recommended
 RUN pip3 install --no-cache-dir nbconvert
+RUN pip3 install --no-cache-dir -U jupyter-book
 
 USER $MASTERUSER
 
