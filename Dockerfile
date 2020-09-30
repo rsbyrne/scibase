@@ -29,6 +29,11 @@ RUN pip3 install --no-cache-dir matplotlib
 RUN pip3 install --no-cache-dir Pillow
 RUN pip3 install --no-cache-dir bokeh
 
+# Programming
+RUN apt-get install -y graphviz
+RUN pip3 install --no-cache-dir objgraph
+RUN pip3 install --no-cache-dir xdot
+
 # Data
 RUN pip3 install --no-cache-dir h5py
 RUN pip3 install --no-cache-dir scipy
